@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 import zipfile
 import os
 import shutil
@@ -19,16 +20,23 @@ class_names = []
 # Configuration de la page Streamlit
 st.set_page_config(page_title="SAFFIRE - Fire and smoke Detection System", layout="wide")
 st.title("SAFFIRE Detection System")
-# Ajouter une image de fond
+
+background_image_path = "background.jpg"  # Chemin de l'image en local
+
+# Lire l'image et l'encoder en Base64
+with open(background_image_path, "rb") as image_file:
+    encoded_string = base64.b64encode(image_file.read()).decode()
+
+# Injecter l'image de fond en CSS
 st.markdown(
-    """
+    f"""
     <style>
-    .stApp {
-        background-image: url("C:.\");
+    .stApp {{
+        background-image: url(data:image/png;base64,{encoded_string});
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
-    }
+    }}
     </style>
     """,
     unsafe_allow_html=True
@@ -40,7 +48,7 @@ st.sidebar.header("Configuration")
 mode = st.sidebar.radio("Select Mode:", ["Automatic", "Manual"])
 
 # Chargement des données
-st.markdown("# Chargement des Données")
+st.markdown("Chargement des Données")
 train_data = st.file_uploader("Importer les données d'entraînement (ZIP)", type=["zip"])
 train_dir = "temp_train_dir"
 
