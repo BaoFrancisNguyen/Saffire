@@ -19,6 +19,21 @@ class_names = []
 # Configuration de la page Streamlit
 st.set_page_config(page_title="SAFFIRE - Fire and smoke Detection System", layout="wide")
 st.title("SAFFIRE Detection System")
+# Ajouter une image de fond
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("C:.\");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Sidebar Mode Selection
 st.sidebar.header("Configuration")
