@@ -19,7 +19,30 @@ class_names = []
 
 # Configuration de la page Streamlit
 st.set_page_config(page_title="SAFFIRE - Fire and smoke Detection System", layout="wide")
-st.title("SAFFIRE Detection System")
+# Titre principal
+st.markdown(
+    """
+    <h1 style="text-align: center; color: black;">SAFFIRE Detection System</h1>
+    """,
+    unsafe_allow_html=True
+)
+
+# Sous-titre
+st.markdown(
+    """
+    <h2 style="text-align: center; color: black;">Powered by AI and TensorFlow</h2>
+    """,
+    unsafe_allow_html=True
+)
+
+# Texte centré
+st.markdown(
+    """
+    <p style="text-align: center; color: black;">Détection avancée de fumée et de feu pour une sécurité optimale</p>
+    """,
+    unsafe_allow_html=True
+)
+
 
 background_image_path = "background.jpg"  # Chemin de l'image en local
 
@@ -42,10 +65,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 # Sidebar Mode Selection
 st.sidebar.header("Configuration")
+
 mode = st.sidebar.radio("Select Mode:", ["Automatic", "Manual"])
+# Ajouter un logo dans la sidebar
+st.sidebar.image("logo.jpg", width=150, caption="SAFFIRE")
 
 # Chargement des données
 st.markdown("Chargement des Données")
@@ -98,7 +123,7 @@ if st.button("Démarrer l'entraînement"):
         num_classes = len(train_generator.class_indices)
         class_names = list(train_generator.class_indices.keys())
 
-        # Correction de l'initialisation de l'optimiseur
+        # initialisation de l'optimiseur
         if optimizer_choice == "Adam":
             optimizer = Adam(learning_rate=learning_rate)
         elif optimizer_choice == "SGD":
@@ -124,7 +149,7 @@ if st.button("Démarrer l'entraînement"):
 
 
         # Affichage des courbes de convergence
-        st.markdown("# Courbes de Convergence")
+        st.markdown("Courbes de Convergence")
         fig, ax = plt.subplots(1, 2, figsize=(14, 5))
         ax[0].plot(history.history['loss'], label='Perte Entraînement')
         ax[0].plot(history.history['val_loss'], label='Perte Validation')
@@ -153,7 +178,7 @@ if st.button("Démarrer l'entraînement"):
             cm = confusion_matrix(y_true, y_pred)
             st.write("**Vraies classes :**", y_true[:10])
             st.write("**Classes prédites :**", y_pred[:10])
-            fig_cm, ax_cm = plt.subplots(figsize=(8, 6))
+            fig_cm, ax_cm = plt.subplots(figsize=(6, 4))
             disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
             disp.plot(ax=ax_cm, cmap='Blues', colorbar=True)
             ax_cm.set_title("Matrice de Confusion")
