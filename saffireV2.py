@@ -183,7 +183,7 @@ if st.button("Démarrer l'entraînement"):
             st.write("**Classes prédites :**", y_pred[:10])
             fig_cm, ax_cm = plt.subplots(figsize=(6, 4))
             disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=class_names)
-            disp.plot(ax_cm, cmap='Blues', colorbar=True)
+            disp.plot(ax=ax_cm, cmap='Blues', colorbar=True)
             ax_cm.set_title("Matrice de Confusion")
             st.pyplot(fig_cm)
         else:
@@ -213,3 +213,4 @@ if image_file and st.button("Prédire"):
         st.error("❗ Aucun modèle chargé. Veuillez entraîner ou charger un modèle.")
 
 #ok
+
