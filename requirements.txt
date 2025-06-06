@@ -1,0 +1,243 @@
+# ============================================================================
+# SAFFIRE - Fire Detection & Neural Style Transfer System
+# Requirements File - Version Complète
+# ============================================================================
+
+# 🚀 Core Framework
+streamlit>=1.28.0,<2.0.0
+# Interface web interactive moderne avec widgets avancés
+
+# 🧠 Deep Learning & Machine Learning
+tensorflow>=2.13.0,<3.0.0
+# Framework principal pour les réseaux de neurones
+# Inclut Keras intégré pour la construction de modèles
+
+keras>=2.13.0,<3.0.0
+# API haut niveau pour TensorFlow (redondant mais pour compatibilité)
+
+scikit-learn>=1.3.0,<2.0.0
+# Métriques, matrices de confusion, preprocessing
+
+numpy>=1.24.0,<2.0.0
+# Calculs matriciels et manipulation d'arrays
+
+pandas>=2.0.0,<3.0.0
+# Manipulation de données tabulaires (pour les logs et métriques)
+
+# 🖼️ Image Processing & Computer Vision
+Pillow>=10.0.0,<11.0.0
+# Manipulation d'images (lecture, sauvegarde, conversion)
+# Alternative: PIL-SIMD pour de meilleures performances
+
+opencv-python>=4.8.0,<5.0.0
+# Traitement d'images avancé (optionnel mais recommandé)
+# Pour des fonctionnalités d'augmentation de données
+
+imageio>=2.31.0,<3.0.0
+# Lecture/écriture d'images dans différents formats
+
+# 📊 Data Visualization & Plotting
+matplotlib>=3.7.0,<4.0.0
+# Graphiques pour courbes de convergence et métriques
+
+seaborn>=0.12.0,<1.0.0
+# Visualisations statistiques plus esthétiques
+
+plotly>=5.15.0,<6.0.0
+# Graphiques interactifs (optionnel pour dashboards avancés)
+
+# 🔧 Utilities & File Handling
+zipfile36>=0.1.0
+# Gestion avancée des archives ZIP (amélioration du zipfile standard)
+
+shutil
+# Opérations sur fichiers et dossiers (module standard Python)
+
+base64
+# Encodage/décodage pour images en base64 (module standard Python)
+
+io
+# Manipulation de flux de données (module standard Python)
+
+os
+# Opérations système (module standard Python)
+
+pathlib>=1.0.0
+# Manipulation moderne des chemins de fichiers
+
+tqdm>=4.65.0,<5.0.0
+# Barres de progression pour opérations longues
+
+# 🎨 Style Transfer Specific
+scipy>=1.11.0,<2.0.0
+# Fonctions scientifiques pour optimisation et traitement de signal
+
+# 🔍 Development & Debugging
+python-dotenv>=1.0.0,<2.0.0
+# Gestion des variables d'environnement
+
+loguru>=0.7.0,<1.0.0
+# Logging avancé pour le debugging
+
+# 💾 Data Storage & Caching (optionnel)
+h5py>=3.9.0,<4.0.0
+# Lecture/écriture de modèles HDF5
+
+pickle5>=0.0.12
+# Sérialisation d'objets Python (compatibilité)
+
+# 🌐 Web & API (pour futures extensions)
+requests>=2.31.0,<3.0.0
+# Requêtes HTTP pour téléchargement de modèles
+
+urllib3>=2.0.0,<3.0.0
+# Client HTTP de bas niveau
+
+# 🔒 Security & Validation
+cryptography>=41.0.0,<42.0.0
+# Chiffrement et sécurité (pour futures fonctionnalités)
+
+# ⚡ Performance Optimization
+numba>=0.57.0,<1.0.0
+# Compilation JIT pour accélération des calculs NumPy
+
+psutil>=5.9.0,<6.0.0
+# Monitoring des ressources système (CPU, RAM, GPU)
+
+# 🎯 GPU Support (optionnel mais recommandé)
+# Décommentez si vous avez un GPU NVIDIA compatible CUDA:
+# tensorflow-gpu>=2.13.0,<3.0.0
+# cuda-toolkit>=11.8
+# cudnn>=8.6.0
+
+# 📱 Mobile/Edge Deployment (optionnel)
+# tensorflow-lite>=2.13.0,<3.0.0
+# Pour déploiement sur appareils mobiles
+
+# ============================================================================
+# VERSIONS SPÉCIFIQUES TESTÉES (pour reproductibilité exacte)
+# ============================================================================
+
+# Configuration testée Python 3.9.x - 3.11.x
+# streamlit==1.28.1
+# tensorflow==2.13.0
+# Pillow==10.0.1
+# numpy==1.24.3
+# matplotlib==3.7.2
+# scikit-learn==1.3.0
+# pandas==2.0.3
+
+# ============================================================================
+# NOTES D'INSTALLATION
+# ============================================================================
+
+# 🐍 Installation standard:
+# pip install -r requirements.txt
+
+# 🚀 Installation avec GPU (NVIDIA):
+# pip install -r requirements.txt
+# pip install tensorflow-gpu
+
+# 🍎 Installation macOS avec Apple Silicon (M1/M2):
+# pip install tensorflow-macos tensorflow-metal
+
+# 🐧 Installation Linux avec optimisations:
+# pip install tensorflow[and-cuda]  # Pour CUDA automatique
+
+# 🏭 Installation production:
+# pip install -r requirements.txt --no-deps
+# (puis installer manuellement les dépendances critiques)
+
+# ============================================================================
+# ALTERNATIVES ET OPTIMISATIONS
+# ============================================================================
+
+# Pour de meilleures performances image:
+# PIL-SIMD au lieu de Pillow (compilation requise)
+
+# Pour traitement d'images plus rapide:
+# opencv-contrib-python au lieu de opencv-python
+
+# Pour GPU AMD (ROCm):
+# tensorflow-rocm au lieu de tensorflow
+
+# Pour environnements contraints:
+# tensorflow-cpu (version CPU uniquement, plus légère)
+
+# ============================================================================
+# EXTENSIONS OPTIONNELLES (pour fonctionnalités avancées)
+# ============================================================================
+
+# 🎬 Video Processing (pour futures fonctionnalités vidéo):
+# moviepy>=1.0.3,<2.0.0
+# ffmpeg-python>=0.2.0,<1.0.0
+
+# 🎨 Advanced Image Filters:
+# scikit-image>=0.21.0,<1.0.0
+# Wand>=0.6.11,<1.0.0  # ImageMagick binding
+
+# 📊 Advanced Analytics:
+# tensorboard>=2.13.0,<3.0.0  # Monitoring d'entraînement
+# wandb>=0.15.0,<1.0.0  # Weights & Biases pour MLOps
+
+# 🔧 Development Tools:
+# black>=23.7.0,<24.0.0  # Code formatting
+# flake8>=6.0.0,<7.0.0  # Linting
+# pytest>=7.4.0,<8.0.0  # Testing framework
+
+# 🌐 API & Deployment:
+# fastapi>=0.103.0,<1.0.0  # API REST
+# uvicorn>=0.23.0,<1.0.0  # ASGI server
+# docker>=6.1.0,<7.0.0  # Containerisation
+
+# ============================================================================
+# TROUBLESHOOTING COMMON ISSUES
+# ============================================================================
+
+# ❌ Problème: "No module named 'tensorflow'"
+# ✅ Solution: pip install --upgrade tensorflow
+
+# ❌ Problème: "Could not find a version that satisfies tensorflow"  
+# ✅ Solution: Vérifier version Python (3.9-3.11 recommandé)
+
+# ❌ Problème: "CUDA out of memory"
+# ✅ Solution: Réduire batch_size ou image size
+
+# ❌ Problème: Streamlit lent au démarrage
+# ✅ Solution: pip install --upgrade streamlit
+
+# ❌ Problème: Images ne s'affichent pas
+# ✅ Solution: pip install --upgrade Pillow
+
+# ❌ Problème: Erreurs de compilation sur macOS
+# ✅ Solution: export SYSTEM_VERSION_COMPAT=1
+
+# ============================================================================
+# DOCKER ALTERNATIVE
+# ============================================================================
+
+# Si vous préférez Docker, créez un Dockerfile:
+# FROM python:3.10-slim
+# COPY requirements.txt .
+# RUN pip install -r requirements.txt
+# COPY . .
+# EXPOSE 8501
+# CMD ["streamlit", "run", "saffire.py"]
+
+# ============================================================================
+# VIRTUAL ENVIRONMENT SETUP (RECOMMANDÉ)
+# ============================================================================
+
+# 1. Créer environnement virtuel:
+# python -m venv saffire_env
+
+# 2. Activer l'environnement:
+# Windows: saffire_env\Scripts\activate
+# Mac/Linux: source saffire_env/bin/activate
+
+# 3. Installer dépendances:
+# pip install --upgrade pip
+# pip install -r requirements.txt
+
+# 4. Lancer l'application:
+# streamlit run saffire.py --server.maxUploadSize=5000
