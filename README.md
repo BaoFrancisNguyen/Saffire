@@ -3,7 +3,7 @@ choose a dataset into a .zip folder  ===> .zip folder / parrent directory / clas
 The program will automatically detect the number of classes
 
 launch on your terminal
-streamlit run saffire.py --server.maxUploadSize=5000
+streamlit run sheep_morph.py --server.maxUploadSize=5000
 
 add your .zip
 on automatic mode:
