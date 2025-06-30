@@ -26,7 +26,7 @@ cd saffire
 pip install -r requirements.txt
 
 # Lancer l'application
-streamlit run saffire.py --server.maxUploadSize=5000
+streamlit run saffire_style_transfert.py --server.maxUploadSize=5000
 ```
 
 ### Premier Usage (5 minutes)
