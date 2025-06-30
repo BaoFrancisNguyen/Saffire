@@ -19,7 +19,7 @@ Le **Module de Transformation Inverse** de SAFFIRE permet de "défaire" les effe
 
 ```bash
 # Cloner le repository
-git clone [votre-repo-saffire]
+git clone (https://github.com/BaoFrancisNguyen/Saffire.git)
 cd saffire
 
 # Installer les dépendances
