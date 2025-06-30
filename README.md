@@ -19,14 +19,14 @@ Le **Module de Transfert de Style Neural** de SAFFIRE permet de transformer n'im
 
 ```bash
 # Cloner le repository
-git clone [votre-repo-saffire]
+git clone (https://github.com/BaoFrancisNguyen/Saffire.git)
 cd saffire
 
 # Installer les dépendances
 pip install -r requirements.txt
 
 # Lancer l'application
-streamlit run saffire.py --server.maxUploadSize=5000
+streamlit run saffire_style_transfert.py --server.maxUploadSize=5000
 ```
 
 ### Premier Transfert de Style (5 minutes)
